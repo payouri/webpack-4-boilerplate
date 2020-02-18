@@ -1,0 +1,19 @@
+{
+    "javascript.format.insertSpaceAfterConstructor": true,
+    "typescript.format.insertSpaceAfterConstructor": true,
+    "eslint.format.enable": true,
+    "eslint.debug": true,
+    "eslint.lintTask.enable": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "emmet.includeLanguages": {
+        "postcss": "css"
+    },
+    "emmet.syntaxProfiles": {
+        "postcss": "css"
+    },
+    "files.associations": {
+        "*.css": "postcss"
+    }
+}
