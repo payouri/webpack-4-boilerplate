@@ -2,27 +2,26 @@
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
-- [TL;DR](#tldr)
-- [Getting Started](#getting-started)
-- [Support ES6 and Beyond](#support-es6-and-beyond)
-- [Auto Inject bundle to HTML](#auto-inject-your-bundle-javascript-code-to-html)
-- [Add CSS configuration](#support-css)
-- [Add SASS/SCSS configuration](#support-sassscss)
-- [Add PostCSS/Autoprefixer](#add-postcssautoprefixer)
-- [Caching and Hashing](#caching-and-hashingremoved)
-- [Clean up before build](#keep-clean-and-fresh)
-- [Add images configuration](#support-images-file)
-- [Add html configuration for Images references](#support-html-images-references)
-- [Full Code webpack.config.js](#wrap-it-up)
-- [Optimization for Production](#optimization-for-production)
-- [Full code webpack config Production](#wrap-it-up-dev-prod)
+- [Webpack 4 Boilerplate](#webpack-4-boilerplate)
+  - [Table of Contents](#table-of-contents)
+  - [TL;DR](#tldr)
+  - [Getting Started](#getting-started)
+  - [Support ES6 and Beyond](#support-es6-and-beyond)
+  - [Auto Inject your bundle javascript code to HTML](#auto-inject-your-bundle-javascript-code-to-html)
+  - [Support CSS](#support-css)
+  - [Add PostCSS/Autoprefixer/tailwindcss](#add-postcssautoprefixertailwindcss)
+  - [Keep Clean and Fresh](#keep-clean-and-fresh)
+  - [Support images file](#support-images-file)
+  - [Support HTML Images references](#support-html-images-references)
+  - [Wrap it up](#wrap-it-up)
+  - [Optimization for Production](#optimization-for-production)
+  - [Wrap it up (Dev Prod)](#wrap-it-up-dev-prod)
 
 ## TL;DR
 
 If you only want to use this webpack 4 configuration and dont want to know how to implement it, well just clone this repo and start develop.
 
-1. `git clone https://github.com/finmavis/webpack-4-boilerplate.git`
+1. `git clone https://github.com/payouri/webpack-4-boilerplate`
 2. Navigate to folder you just clone
 3. Install all Dependencies, `yarn` or `npm install`
 4. Then for development just run the script `yarn start` or `npm run start`
@@ -334,65 +333,20 @@ If you only want to use this webpack 4 configuration and dont want to know how t
   }
   ```
 
-## Support SASS/SCSS
+## Add PostCSS/Autoprefixer/tailwindcss
 
-- Install `node-sass sass-loader` as Development Dependencies
+- Install `postcss-loader tailwindcss precss postcss-preset-env cssnano` as Development Dependencies
 
   If you're using **yarn**
 
   ```
-  yarn add --dev node-sass sass-loader
+  yarn add --dev postcss-loader tailwind precss postcss-preset-env cssnano
   ```
 
   If you're using **npm**
 
   ```
-  npm install --save-dev node-sass sass-loader
-  ```
-
-  **Notes** : These are the packages we will be using :
-
-  - `node-sass` <br>
-    Node-sass is a library that provides binding for Node.js to LibSass, the C version of the popular stylesheet preprocessor, Sass. It allows you to natively compile .scss/.sass files to css at incredible speed and automatically via a connect middleware.
-
-  - `sass-loader` <br>
-    Loads a Sass/SCSS file and compiles it to CSS for webpack.
-
-- Open `config/webpack.config.js` and change a little bit css module like this
-
-  ```
-  module.exports = {
-    // ... others configuration
-    module: {
-      rules: [
-        // ... others module rules configuration
-        {
-          test: /\.(sa|sc|c)ss$/,
-          use: [
-            'style-loader',
-            'css-loader',
-            'sass-loader'
-          ]
-        }
-      ]
-    },
-  }
-  ```
-
-## Add PostCSS/Autoprefixer
-
-- Install `postcss-loader postcss-preset-env cssnano` as Development Dependencies
-
-  If you're using **yarn**
-
-  ```
-  yarn add --dev postcss-loader postcss-preset-env cssnano
-  ```
-
-  If you're using **npm**
-
-  ```
-  npm install --save-dev postcss-loader postcss-preset-env cssnano
+  npm install --save-dev postcss-loader tailwind precss postcss-preset-env cssnano
   ```
 
   **Notes** : These are the packages we will be using :
